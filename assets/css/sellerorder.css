@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --premium-shadow: 0 10px 30px -5px rgba(216, 49, 116, 0.15), 0 4px 10px -2px rgba(216, 49, 116, 0.05);
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: #333;
+}
+
+/* Navbar Tuning */
+.navbar {
+    background: var(--gradient-pink);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+/* Section Title */
+.section-title {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+/* Table Styling */
+.order-table-container {
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: var(--premium-shadow);
+    border: 1px solid rgba(216, 49, 116, 0.05);
+}
+
+.order-table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.order-table th {
+    background: var(--light-bg);
+    padding: 1.2rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-pink);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--soft-pink);
+    text-align: center;
+}
+
+.order-table td {
+    padding: 1.2rem 1rem;
+    font-size: 0.95rem;
+    color: #444;
+    border-bottom: 1px solid #f8f8f8;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.order-table tbody tr:hover {
+    background: rgba(216, 49, 116, 0.03);
+}
+
+/* Status Badges */
+.badge {
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Empty Message */
+.empty-message-wrap {
+    padding: 100px 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: var(--premium-shadow);
+}
+
+.empty-message {
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.empty-message i {
+    font-size: 4rem;
+    color: var(--soft-pink);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Footer (Matching style.css) */
+.premium-footer {
+    background: var(--gradient-pink);
+    color: #fff;
+    padding: 80px 0 40px;
+    margin-top: 80px;
+}
+
+.footer-bottom {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}

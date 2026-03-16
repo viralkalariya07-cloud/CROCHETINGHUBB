@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --premium-shadow: 0 10px 30px -5px rgba(216, 49, 116, 0.15), 0 4px 10px -2px rgba(216, 49, 116, 0.05);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Navbar Tuning */
+.navbar {
+    background: var(--gradient-pink);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+.nav-link i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.section-title {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+.btn-pink {
+    background: var(--gradient-pink);
+    color: white !important;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(216, 49, 116, 0.15);
+}
+
+.btn-pink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(216, 49, 116, 0.25);
+}
+
+/* ============================================================
+   ADDITIVE ACCOUNT-PAGE STYLES
+   (theme variables reused — nothing above is changed)
+   ============================================================ */
+
+/* ---------- Active nav pill ---------- */
+.nav-link--active {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-radius: 8px;
+    font-weight: 600 !important;
+}
+
+/* ---------- Page Hero ---------- */
+.account-hero {
+    background: linear-gradient(180deg, rgba(216, 49, 116, 0.06) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(216, 49, 116, 0.1);
+    padding: 2rem 0 1.6rem;
+    text-align: center;
+}
+
+.account-subtitle {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* ---------- Dashboard Section ---------- */
+.dashboard-section {
+    padding: 2rem 0 2.8rem;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+/* ---------- SIDEBAR ---------- */
+.sidebar-nav {
+    background: #fff;
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    border-radius: 24px;
+    padding: 15px;
+    box-shadow: var(--premium-shadow);
+}
+
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.sidebar-btn i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+}
+
+.sidebar-btn:hover {
+    background: var(--light-bg);
+    color: var(--primary-pink);
+    transform: translateX(6px);
+}
+
+.sidebar-btn--active {
+    background: var(--gradient-pink);
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(216, 49, 116, 0.2);
+}
+
+.sidebar-btn--active i {
+    color: #fff;
+}
+
+.sidebar-btn--logout:hover {
+    background: #fff0f0;
+    color: #c0392b !important;
+}
+
+/* ============================================================
+   CONTENT WRAPPER & PANELS
+   ============================================================ */
+/* ---------- CONTENT PANELS ---------- */
+.content-wrapper {
+    background: #fff;
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: var(--premium-shadow);
+    min-height: 500px;
+}
+
+.panel {
+    animation: panelFadeIn 0.32s ease;
+}
+
+@keyframes panelFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-title {
+    font-weight: 700;
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--soft-pink);
+}
+
+/* ---------- Shared form styles ---------- */
+.panel-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.28rem;
+}
+
+.panel-label .req {
+    color: var(--primary-pink);
+}
+
+.panel-input {
+    border: 1px solid #e2e2e2;
+    border-radius: 9px;
+    padding: 0.55rem 0.78rem;
+    font-size: 0.88rem;
+    background: var(--light-bg);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.panel-input:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(216, 49, 116, 0.13);
+    background: #fff;
+    outline: none;
+}
+
+.panel-input::placeholder {
+    color: #bfbfbf;
+}
+
+.panel-input.is-invalid {
+    border-color: #e74c3c;
+    background: #fff5f5;
+}
+
+.panel-input.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+/* ============================================================
+   PROFILE — Avatar
+   ============================================================ */
+/* ---------- PROFILE — Avatar ---------- */
+.avatar-ring {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(216, 49, 116, 0.15);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.avatar-ring:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(216, 49, 116, 0.25);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.upload-label {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-pink);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.upload-label:hover {
+    color: var(--deep-pink);
+}
+
+/* ============================================================
+   ORDERS — Cards & Status Badges
+   ============================================================ */
+/* ---------- ORDERS — Cards & Status Badges ---------- */
+.order-card {
+    background: #fff;
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.order-card:hover {
+    box-shadow: 0 15px 35px rgba(216, 49, 116, 0.12);
+    transform: translateY(-5px);
+}
+
+.order-id {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #222;
+    font-family: var(--font-heading);
+}
+
+/* Status pills */
+.order-status {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.order-status--delivered {
+    background: #e6f9ef;
+    color: #1e8449;
+}
+
+.order-status--processing {
+    background: #eef2ff;
+    color: #2e4057;
+    background: #fff3cd;
+    color: #856404;
+}
+
+.order-status--pending {
+    background: #fde8e8;
+    color: #c0392b;
+}
+
+/* Order body lines */
+.order-meta {
+    font-size: 0.82rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.order-meta i {
+    color: var(--primary-pink);
+    width: 14px;
+    text-align: center;
+}
+
+.order-total-line {
+    font-weight: 700 !important;
+    color: var(--primary-pink) !important;
+    font-size: 0.92rem !important;
+    margin-top: 0.4rem;
+}
+
+/* ============================================================
+   FEEDBACK — Star Rating (pure CSS)
+   ============================================================ */
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.star-input {
+    display: none;
+}
+
+.star-label {
+    font-size: 1.7rem;
+    color: #d9d9d9;
+    cursor: pointer;
+    transition: color 0.18s ease, transform 0.15s ease;
+}
+
+.star-label:hover,
+.star-label:hover~.star-label,
+.star-input:checked~.star-label {
+    color: var(--primary-pink);
+}
+
+.star-label:hover {
+    transform: scale(1.15);
+}
+
+/* ============================================================
+   LOGOUT BOX
+   ============================================================ */
+.logout-box {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+}
+
+.logout-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(216, 49, 116, 0.1), rgba(255, 133, 161, 0.12));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--primary-pink);
+}
+
+/* ---------- CUSTOM MODAL OVERRIDE ---------- */
+.modal-custom {
+    border-radius: 32px;
+    border: none;
+    box-shadow: 0 30px 60px rgba(216, 49, 116, 0.25);
+    padding: 20px;
+}
+
+.modal-content {
+    border-radius: 32px;
+    border: none;
+}
+
+.modal-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.modal-icon--success {
+    background: #e6f9ef;
+    color: #1e8449;
+    box-shadow: 0 10px 20px rgba(30, 132, 73, 0.1);
+}
+
+.modal-icon--info {
+    background: var(--light-bg);
+    color: var(--primary-pink);
+    box-shadow: 0 10px 20px rgba(216, 49, 116, 0.1);
+}
+
+.modal-icon--error {
+    background: #fde8e8;
+    color: #c0392b;
+    box-shadow: 0 10px 20px rgba(192, 57, 43, 0.1);
+}
+
+/* ============================================================
+   FOOTER EXTRAS
+   ============================================================ */
+.footer-brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #fff;
+}
+
+.footer-tagline {
+    font-size: 0.82rem;
+    opacity: 0.78;
+}
+
+.footer-copy {
+    font-size: 0.78rem;
+    opacity: 0.7;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet & below — sidebar becomes horizontal pills */
+@media (max-width: 991px) {
+    .sidebar-nav {
+        border-radius: 12px;
+    }
+
+    .sidebar-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .sidebar-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.82rem;
+        border-radius: 8px;
+    }
+
+    .content-wrapper {
+        padding: 1.4rem 1.1rem;
+    }
+}
+
+/* Small mobile tweaks */
+@media (max-width: 480px) {
+    .account-hero {
+        padding: 1.4rem 0 1rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .sidebar-btn span {
+        font-size: 0.78rem;
+    }
+
+    .order-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-wrapper {
+        padding: 1.1rem 0.9rem;
+        min-height: auto;
+    }
+
+    .avatar-ring {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+.bg-soft-pink {
+    background-color: var(--soft-pink) !important;
+}
+
+.text-pink {
+    color: var(--primary-pink) !important;
+}
+
+.feedback-item-card {
+    background-color: #fff;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feedback-item-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-pink) !important;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Searchable Dropdown for Sellers */
+.seller-dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid rgba(216, 49, 116, 0.15);
+    border-radius: 12px;
+    z-index: 1000;
+    max-height: 220px;
+    overflow-y: auto;
+    margin-top: 8px;
+    animation: panelFadeIn 0.2s ease;
+}
+
+.seller-option {
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: #444;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.seller-option:last-child {
+    border-bottom: none;
+}
+
+.seller-option:hover {
+    background: var(--light-bg);
+    color: var(--primary-pink);
+    padding-left: 22px;
+}
+
+.saved-address-card {
+    background-color: var(--light-bg);
+    border: 1.5px dashed var(--primary-pink);
+}
+
+.saved-address-card h6 {
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+}

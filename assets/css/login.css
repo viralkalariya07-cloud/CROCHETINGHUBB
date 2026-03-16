@@ -1,0 +1,178 @@
+/* ===== Theme Variables matching style.css ===== */
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --text-gray: #6c757d;
+    --text-dark: #222;
+    --font-heading: 'Playfair Display', serif;
+    --font-main: 'Outfit', sans-serif;
+    --premium-shadow: 0 20px 40px -10px rgba(216, 49, 116, 0.2);
+}
+
+/* ===== MAIN LAYOUT ===== */
+body {
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    font-family: var(--font-main);
+}
+
+.login-main {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Updated Animated Background */
+.login-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, #fffcfd, #ffeef4, #fffcfd);
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+    z-index: -2;
+}
+
+/* Decorative Floating Elements (Refined) */
+.login-main::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(216, 49, 116, 0.08), transparent 70%);
+    top: -200px;
+    right: -200px;
+    border-radius: 50%;
+    z-index: -1;
+    animation: floatSlow 12s ease-in-out infinite;
+}
+
+/* ===== LOGIN CARD ===== */
+.login-card {
+    background: #ffffff;
+    padding: 50px 45px;
+    border-radius: 32px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: var(--premium-shadow);
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    z-index: 2;
+    animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.website-name {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    color: var(--text-gray);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+/* ===== FORM CONTROLS ===== */
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+    z-index: 5;
+}
+
+.form-control,
+.form-select {
+    padding: 12px 15px 12px 45px;
+    border: 1.5px solid #eee;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 4px rgba(216, 49, 116, 0.1);
+    background-color: #fff;
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* ===== BUTTON ===== */
+.btn-login {
+    background: var(--gradient-pink);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(216, 49, 116, 0.2);
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(216, 49, 116, 0.3);
+    color: white;
+    background: linear-gradient(135deg, #ff85a1 0%, #d83174 100%);
+}
+
+.btn-login:active {
+    transform: translateY(-1px);
+}
+
+/* ===== LINKS ===== */
+.create-account-link {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.create-account-link:hover {
+    color: var(--deep-pink);
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+
+    .website-name {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    /* Slightly warmer white */
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --premium-shadow: 0 10px 30px -5px rgba(216, 49, 116, 0.15), 0 4px 10px -2px rgba(216, 49, 116, 0.05);
+    /* Glassmorphism token */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.35);
+    /* Typography */
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--gradient-pink);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.2rem;
+    right: 1.2rem;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Carousel */
+.slider-img {
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Welcome Section */
+.welcome-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.welcome-section p {
+    font-size: 1.25rem;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+/* Footer Styling */
+.premium-footer {
+    background: var(--gradient-pink);
+    color: #fff;
+    padding: 80px 0 40px;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer-brand:hover {
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.footer-social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.3s ease;
+    display: inline-block;
+}
+
+.footer-social-links a:hover {
+    color: var(--soft-pink);
+    transform: translateY(-5px) rotate(8deg);
+}
+
+.footer-heading {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mini-reviews-footer .mini-review p {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.95rem;
+}
+
+.mini-reviews-footer .mini-review span {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-nav-horizontal a {
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav-horizontal a:hover {
+    color: var(--soft-pink) !important;
+}
+
+/* Form controls in footer */
+.premium-footer .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.premium-footer .form-control:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    border-color: var(--soft-pink);
+    color: white;
+}
+
+/* Service Cards */
+.services-section {
+    padding-bottom: 100px;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    border-radius: 24px;
+    padding: 50px 35px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--premium-shadow);
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(216, 49, 116, 0.25);
+    background: linear-gradient(to bottom right, #fff, #fff6f9);
+}
+
+.service-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--light-bg);
+    color: var(--primary-pink);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    margin: 0 auto 30px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 8px 20px rgba(216, 49, 116, 0.1);
+}
+
+.service-card:hover .service-icon {
+    background: var(--primary-pink);
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(216, 49, 116, 0.3);
+}
+
+.service-card h3 {
+    color: #222;
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Custom Buttons */
+.btn-primary {
+    background: var(--gradient-pink);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(216, 49, 116, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--deep-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(216, 49, 116, 0.3);
+}
+
+/* About Us Section */
+.about-us-section {
+    padding: 100px 0;
+    background: #fff;
+    position: relative;
+}
+
+.about-us-section .lead {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--primary-pink);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.about-us-section p:not(.lead) {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+/* Section Title Refinement */
+.section-title {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 3rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 4rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-pink);
+    border-radius: 2px;
+}
+
+/* Reviews Section removed from main */

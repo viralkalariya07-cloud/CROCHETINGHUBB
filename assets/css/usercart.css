@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --premium-shadow: 0 10px 30px -5px rgba(216, 49, 116, 0.15), 0 4px 10px -2px rgba(216, 49, 116, 0.05);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Navbar Tuning */
+.navbar {
+    background: var(--gradient-pink);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+.section-title {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.btn-pink {
+    background: var(--gradient-pink);
+    color: white !important;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(216, 49, 116, 0.2);
+}
+
+.btn-pink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(216, 49, 116, 0.3);
+}
+
+/* ---------- Page Hero ---------- */
+.cart-hero {
+    background: linear-gradient(180deg, rgba(216, 49, 116, 0.06) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(216, 49, 116, 0.1);
+    padding: 3rem 0 2rem;
+    text-align: center;
+}
+
+.cart-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+/* ---------- Cart Item Card ---------- */
+.cart-item-card {
+    background: #fff;
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--premium-shadow);
+    animation: slideIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+.cart-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(216, 49, 116, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cart-item-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cart-item-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #222;
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+
+.cart-item-desc {
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.cart-item-price {
+    font-weight: 700;
+    color: var(--primary-pink);
+    font-size: 1.2rem;
+}
+
+/* ---------- Quantity Selector ---------- */
+.qty-selector {
+    display: flex;
+    align-items: center;
+    background: var(--light-bg);
+    border: 1px solid rgba(216, 49, 116, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.qty-btn {
+    background: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-pink);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 2px;
+}
+
+.qty-btn:hover {
+    background: var(--primary-pink);
+    color: #fff;
+}
+
+.qty-value {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ---------- Order Summary Card ---------- */
+.order-summary-card {
+    background: #fff;
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: var(--premium-shadow);
+}
+
+.summary-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-pink);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-divider {
+    border: none;
+    border-top: 1px solid rgba(216, 49, 116, 0.1);
+    margin: 1.2rem 0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.summary-total {
+    font-size: 1.3rem !important;
+    font-weight: 700;
+    color: #222 !important;
+    margin-top: 0.5rem;
+}
+
+.summary-total span:last-child {
+    color: var(--primary-pink) !important;
+    font-size: 1.6rem;
+}
+
+/* ---------- Footer (Matching style.css) ---------- */
+.premium-footer {
+    background: var(--gradient-pink);
+    color: #fff;
+    padding: 80px 0 30px;
+    margin-top: 80px;
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    background: #fff;
+    color: var(--primary-pink);
+    transform: translateY(-5px);
+}

@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --premium-shadow: 0 10px 30px -5px rgba(216, 49, 116, 0.15), 0 4px 10px -2px rgba(216, 49, 116, 0.05);
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: #333;
+}
+
+/* HEADER (Matching other premium headers) */
+.seller-header {
+    background: var(--gradient-pink);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.seller-header h2 {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.seller-header nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.seller-header nav a:hover,
+.seller-header nav a.active {
+    color: #fff;
+}
+
+/* MAIN */
+.product-main {
+    padding: 80px 0;
+}
+
+.page-title {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+/* CARD */
+.product-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--premium-shadow);
+    border: 1px solid rgba(216, 49, 116, 0.05);
+}
+
+.product-card h4 {
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+.form-label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 14px;
+    padding: 12px 18px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 4px rgba(216, 49, 116, 0.1);
+    outline: none;
+}
+
+/* BUTTONS */
+.btn-register {
+    background: var(--gradient-pink);
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(216, 49, 116, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(216, 49, 116, 0.3);
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background: var(--light-bg);
+    color: var(--primary-pink);
+    border: 1px solid #ffe4ed;
+}
+
+.btn-delete {
+    background: #fff5f5;
+    color: #ff4d4d;
+    border: 1px solid #ffebeb;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* TABLE */
+.table thead th {
+    background: var(--light-bg);
+    color: var(--primary-pink);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    padding: 1.2rem 1rem;
+    border-bottom: 2px solid var(--soft-pink);
+}
+
+.table td {
+    padding: 1.2rem 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.product-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.video-link {
+    color: var(--primary-pink);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.video-link:hover {
+    color: var(--deep-pink);
+    border-bottom-color: var(--deep-pink);
+}

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --premium-shadow: 0 10px 30px -5px rgba(216, 49, 116, 0.15), 0 4px 10px -2px rgba(216, 49, 116, 0.05);
+}
+
+.seller-list-container {
+    width: 100%;
+    padding: 80px 15px;
+    background-color: var(--light-bg);
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-pink);
+    position: relative;
+    display: inline-block;
+}
+
+.page-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background: var(--gradient-pink);
+    border-radius: 10px;
+}
+
+.seller-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seller-card {
+    background: #fff;
+    border-radius: 32px;
+    padding: 40px;
+    box-shadow: var(--premium-shadow);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(216, 49, 116, 0.05);
+}
+
+.seller-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px -12px rgba(216, 49, 116, 0.2);
+    border-color: var(--primary-pink);
+}
+
+.seller-avatar {
+    width: 100px;
+    height: 100px;
+    background: var(--light-bg);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    color: var(--primary-pink);
+    box-shadow: 0 10px 20px rgba(216, 49, 116, 0.1);
+    transition: all 0.3s ease;
+}
+
+.seller-card:hover .seller-avatar {
+    background: var(--primary-pink);
+    color: #fff;
+    transform: rotate(5deg) scale(1.1);
+}
+
+.seller-name {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.business-name {
+    font-size: 0.9rem;
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-bottom: 25px;
+    background: var(--light-bg);
+    padding: 6px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.seller-contact-info {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.contact-item i {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+}
+
+.btn-contact-seller {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--gradient-pink);
+    color: #fff !important;
+    border-radius: 16px;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(216, 49, 116, 0.2);
+}
+
+.btn-contact-seller:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(216, 49, 116, 0.3);
+}

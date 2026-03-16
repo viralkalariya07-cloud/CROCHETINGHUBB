@@ -1,0 +1,6 @@
+# XAMPP/PHP ignore
+*.log
+*.tmp
+.DS_Store
+# Maybe ignore specific large folders if needed
+# uploads/

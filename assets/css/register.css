@@ -1,0 +1,189 @@
+/* ===== Theme Variables matching style.css ===== */
+:root {
+    --primary-pink: #d83174;
+    --soft-pink: #ffd1e1;
+    --deep-pink: #b51d5b;
+    --light-bg: #fffcfd;
+    --gradient-pink: linear-gradient(135deg, #d83174 0%, #ff85a1 100%);
+    --text-gray: #6c757d;
+    --text-dark: #222;
+    --font-heading: 'Playfair Display', serif;
+    --font-main: 'Outfit', sans-serif;
+    --premium-shadow: 0 20px 40px -10px rgba(216, 49, 116, 0.2);
+}
+
+/* ===== BODY BACKGROUND ===== */
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+/* Register Main Layout */
+.register-main {
+    min-height: calc(100vh - 160px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container {
+    flex: 1;
+    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Updated Animated Background */
+.register-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, #fffcfd, #ffeef4, #fffcfd);
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+    z-index: -2;
+}
+
+/* Decorative Floating Elements */
+.register-main::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(216, 49, 116, 0.08), transparent 70%);
+    top: -200px;
+    right: -200px;
+    border-radius: 50%;
+    z-index: -1;
+    animation: floatSlow 12s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(30px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* ===== REGISTRATION CARD ===== */
+.register-card {
+    background: #ffffff;
+    padding: 50px 45px;
+    border-radius: 32px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: var(--premium-shadow);
+    border: 1px solid rgba(216, 49, 116, 0.05);
+    z-index: 2;
+    animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ===== HEADING ===== */
+.register-card h3 {
+    text-align: center;
+    color: var(--primary-pink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    margin-bottom: 35px;
+    font-size: 2.5rem;
+}
+
+/* ===== INPUT FIELDS ===== */
+.form-label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1.5px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 4px rgba(216, 49, 116, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== BUTTON ===== */
+.btn-register {
+    background: var(--gradient-pink);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-register:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(216, 49, 116, 0.3);
+    color: white;
+}
+
+/* ===== LOGIN LINK ===== */
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+.login-link a {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    margin-left: 5px;
+}
+
+.login-link a:hover {
+    color: var(--deep-pink);
+    text-decoration: underline;
+}
+
+/* Background Circles (Optional extras) */
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.bg-circle.one {
+    width: 100px;
+    height: 100px;
+    background: var(--soft-pink);
+    top: 10%;
+    left: 5%;
+}
+
+.bg-circle.two {
+    width: 150px;
+    height: 150px;
+    background: var(--primary-pink);
+    bottom: 15%;
+    left: 10%;
+}

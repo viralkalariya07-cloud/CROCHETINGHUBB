@@ -124,11 +124,10 @@ INSERT IGNORE INTO `categories` (`name`) VALUES
 -- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS `tutorials` (
   `id`          INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `seller_id`   INT(11) UNSIGNED DEFAULT NULL,
-  `title`       VARCHAR(200)     NOT NULL,
-  `description` TEXT             DEFAULT NULL,
-  `video_url`   VARCHAR(500)     DEFAULT NULL,
-  `thumbnail`   VARCHAR(300)     DEFAULT NULL,
+  `name`        VARCHAR(200)     NOT NULL,
+  `seller_name` VARCHAR(150)     NOT NULL,
+  `video_link`  VARCHAR(500)     NOT NULL,
+  `photo`       VARCHAR(300)     NOT NULL,
   `created_at`  TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
